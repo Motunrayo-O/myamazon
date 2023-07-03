@@ -1,6 +1,7 @@
 using MyAmazon.Data;
 using MyAmazon.Data.Repository;
 using MyAmazon.Data.Repository.Interfaces;
+using MyAmazon.Extensions;
 using MyAmazon.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<MyAmazonContext>();
 builder.Services.AddTransient<IGenericRepository<Product>, GenericRepository<Product>>();
 builder.Services.AddTransient<IGenericRepository<Seller>, GenericRepository<Seller>>();
+
+builder.Services.ConfigureRepositoryWrapper();
 
 
 

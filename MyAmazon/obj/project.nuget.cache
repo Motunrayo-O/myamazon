@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "L25qu1i1kbgegO62l6DBtOQI31uJhL6cg/+E2ttx1S1qXmUHwSut1LxNKw8NnMQGnqZmsny0QiIqI/mXGcXN1A==",
+  "dgSpecHash": "Pkjho68kUyeHEfI/98FA8ffBFwXjwfSHkOKzHvJXTKznwVyN5GrtsCzU+DAEJiVFACxlkr7aaO+5CpqWHj4L9w==",
   "success": true,
   "projectFilePath": "/Users/motunrayoogunyinka/Documents/Training/dotnet/MyAmazon/MyAmazon/MyAmazon.csproj",
   "expectedPackageFiles": [
+    "/Users/motunrayoogunyinka/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/microsoft.aspnetcore.openapi/7.0.7/microsoft.aspnetcore.openapi.7.0.7.nupkg.sha512",
+    "/Users/motunrayoogunyinka/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/microsoft.data.sqlite.core/7.0.0/microsoft.data.sqlite.core.7.0.0.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/microsoft.entityframeworkcore/7.0.0/microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.0/microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
