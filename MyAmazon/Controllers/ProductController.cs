@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyAmazon.Data.Repository.Interfaces;
 using MyAmazon.DataTransferObjects;
 using MyAmazon.Models;
+using System.Linq.Expressions;
 
 namespace MyAmazon.Controllers;
 
@@ -23,7 +24,7 @@ public class ProductController : ControllerBase
     {
         try
         {
-            var products = _repoWrapper.ProductRepository.FindAll();
+            var products = _repoWrapper.ProductRepository.GetAll();
 
             var productsResult =_mapper.Map<IEnumerable<ProductDTO>>(products);
             return Ok(productsResult);
@@ -149,7 +150,7 @@ public class ProductController : ControllerBase
                     return BadRequest("Cannot delete product. It has related products. Delete those products first");
                 }
 
-                _repoWrapper.ProductRepository.Delete(productList[0]);
+                _repoWrapper.ProductRepository.Delete(productList[0].Id);
                 _repoWrapper.Save();
 
                 return NoContent();

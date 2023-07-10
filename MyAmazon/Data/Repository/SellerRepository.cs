@@ -3,7 +3,7 @@ using MyAmazon.Data.Repository.Interfaces;
 
 namespace MyAmazon.Data.Repository;
 
-public class SellerRepository : GenericRepositoryBase<Seller>, ISellerRepository
+public class SellerRepository : GenericRepository<Seller>, ISellerRepository
 {
     public SellerRepository(MyAmazonContext repositoryContext)
         :base(repositoryContext)

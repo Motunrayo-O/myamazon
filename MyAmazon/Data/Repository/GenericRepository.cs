@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MyAmazon.Data.Repository.Interfaces;
+using System.Linq.Expressions;
 
 namespace MyAmazon.Data.Repository;
 public class GenericRepository<T> : IGenericRepository<T> where T : class
@@ -18,6 +19,9 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
 
     public async Task<T> GetById(Guid id) =>
          await _entities.FindAsync(id);
+
+    public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression) => 
+        _context.Set<T>().Where(expression).AsNoTracking();
 
     public async Task Create(T entity) =>
         await _context.AddAsync(entity);

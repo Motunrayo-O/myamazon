@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PG8e5CvTIDI0hNLva6dzlclDpt6OpkpqMo+GplYsoUadl+CWf//UP+fYdfu8Kq2Woctpy0GEtg3FbhUSNqMqGw==",
+  "dgSpecHash": "YYo3cU2OTe6ULHeYKELWPMKYAJFdjz3Oo60pk8dx3wsDe5t97Age1/OTu3ryozM/hJLe4hStnXtihEpBpn2Nhw==",
   "success": true,
   "projectFilePath": "/Users/motunrayoogunyinka/Documents/Training/dotnet/MyAmazon/MyAmazonTest/MyAmazonTest.csproj",
   "expectedPackageFiles": [
     "/Users/motunrayoogunyinka/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/motunrayoogunyinka/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/microsoft.aspnetcore.openapi/7.0.7/microsoft.aspnetcore.openapi.7.0.7.nupkg.sha512",

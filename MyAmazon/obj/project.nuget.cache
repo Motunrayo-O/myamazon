@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Pkjho68kUyeHEfI/98FA8ffBFwXjwfSHkOKzHvJXTKznwVyN5GrtsCzU+DAEJiVFACxlkr7aaO+5CpqWHj4L9w==",
+  "dgSpecHash": "zbfgUnOFylOSt1p6AyjlueFBGqu3XieAicw1o8UuazHEo4UU9d+40bPTFchlfY3kFsB6CgM8hz5cjIH830G7XA==",
   "success": true,
   "projectFilePath": "/Users/motunrayoogunyinka/Documents/Training/dotnet/MyAmazon/MyAmazon/MyAmazon.csproj",
   "expectedPackageFiles": [
     "/Users/motunrayoogunyinka/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/Users/motunrayoogunyinka/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/microsoft.aspnetcore.openapi/7.0.7/microsoft.aspnetcore.openapi.7.0.7.nupkg.sha512",
     "/Users/motunrayoogunyinka/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

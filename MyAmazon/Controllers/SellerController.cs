@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyAmazon.Data.Repository.Interfaces;
 using MyAmazon.DataTransferObjects;
 using MyAmazon.Models;
+using System.Linq.Expressions;
 
 namespace MyAmazon.Controllers;
 
@@ -21,9 +22,10 @@ public class SellerController : ControllerBase
     [HttpGet]
     public IActionResult FindAllSellers()
     {
+        System.Diagnostics.Debug.WriteLine("kokok");
         try
         {
-            var sellers = _repoWrapper.SellerRepository.FindAll();
+            var sellers = _repoWrapper.SellerRepository.GetAll();
 
             var sellersResult =_mapper.Map<IEnumerable<SellerDTO>>(sellers);
             return Ok(sellersResult);
@@ -31,6 +33,7 @@ public class SellerController : ControllerBase
         catch(Exception ex){
             
             //TODO - add logging
+            System.Diagnostics.Debug.WriteLine("kokok" + ex);
 
             return StatusCode(500, "Internal Server error");
         }
@@ -57,6 +60,7 @@ public class SellerController : ControllerBase
             return StatusCode(500, "Internal Server error");
         }
     }
+    
 
     [HttpPost]
     public IActionResult CreateSeller([FromBody] SellerCreateDTO seller)
@@ -146,10 +150,10 @@ public class SellerController : ControllerBase
                 if (_repoWrapper.ProductRepository.FindByCondition(p => p.SellerId == id).Any())
                 {
                     // TODO logging
-                    return BadRequest("Cannot delete seller. It has related products. Delete those products first");
+                    return BadRequest("Cannot delete seller. It has related products.");
                 }
 
-                _repoWrapper.SellerRepository.Delete(sellerList[0]);
+                _repoWrapper.SellerRepository.Delete(sellerList[0].Id);
                 _repoWrapper.Save();
 
                 return NoContent();

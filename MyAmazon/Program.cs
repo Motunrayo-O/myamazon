@@ -17,6 +17,9 @@ builder.Services.AddScoped<MyAmazonContext>();
 builder.Services.AddTransient<IGenericRepository<Product>, GenericRepository<Product>>();
 builder.Services.AddTransient<IGenericRepository<Seller>, GenericRepository<Seller>>();
 
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddControllers();
+
 builder.Services.ConfigureRepositoryWrapper();
 
 
