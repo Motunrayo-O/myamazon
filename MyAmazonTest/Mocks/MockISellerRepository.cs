@@ -28,6 +28,10 @@ internal class MockISellerRepository
             }
         };
 
+        List<Seller> sellerList = new List<Seller>();
+        sellerList.Add(seller2);
+        IQueryable<Seller> queryableSellers = sellerList.AsQueryable();
+
         var sellers = new List<Seller>()
         {
             new Seller()
@@ -51,11 +55,11 @@ internal class MockISellerRepository
 
     IQueryable<Seller> allSellers = sellers.AsQueryable();
 
-    mock.Setup(mock => mock.FindAll()).Returns(() => allSellers);
-    mock.Setup(mock => mock.FindByCondition(It.IsAny<Expression<Func<Seller, bool>>>())).Returns(() => seller2);
+    mock.Setup(mock => mock.GetAll()).Returns(() => sellers);
+    mock.Setup(mock => mock.FindByCondition(It.IsAny<Expression<Func<Seller, bool>>>())).Returns(() => queryableSellers);
     mock.Setup(mock => mock.Create(It.IsAny<Seller>())).Callback(() => { return;});
     mock.Setup(mock => mock.Update(It.IsAny<Seller>())).Callback(() => { return;});
-    mock.Setup(mock => mock.Delete(It.IsAny<Seller>())).Callback(() => { return;});
+    mock.Setup(mock => mock.Delete(It.IsAny<Guid>())).Callback(() => { return;});
 
         return mock;
     }

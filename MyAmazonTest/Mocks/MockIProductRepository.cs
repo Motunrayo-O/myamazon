@@ -18,7 +18,11 @@ internal class MockIProductRepository
             SellerId = Guid.Parse("1f8fad5b-d9cb-469f-a165-70867728950e")
         };
 
-        var Products = new List<Product>()
+        List<Product> productList = new List<Product>();
+        productList.Add(product2);
+        IQueryable<Product> queryableProducts = productList.AsQueryable();
+
+        var products = new List<Product>()
         {
             new Product()
             {
@@ -29,13 +33,13 @@ internal class MockIProductRepository
             product2
         };
 
-    IQueryable<Product> allProducts = Products.AsQueryable();
+    IQueryable<Product> allProducts = products.AsQueryable();
 
-    mock.Setup(mock => mock.FindAll()).Returns(() => allProducts);
-    mock.Setup(mock => mock.FindByCondition(It.IsAny<Expression<Func<Product, bool>>>())).Returns(() => product2);
+    mock.Setup(mock => mock.GetAll()).Returns(() => products);
+    mock.Setup(mock => mock.FindByCondition(It.IsAny<Expression<Func<Product, bool>>>())).Returns(() => queryableProducts);
     mock.Setup(mock => mock.Create(It.IsAny<Product>())).Callback(() => { return;});
     mock.Setup(mock => mock.Update(It.IsAny<Product>())).Callback(() => { return;});
-    mock.Setup(mock => mock.Delete(It.IsAny<Product>())).Callback(() => { return;});
+    mock.Setup(mock => mock.Delete(It.IsAny<Guid>())).Callback(() => { return;});
 
         return mock;
     }
