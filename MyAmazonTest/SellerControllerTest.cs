@@ -46,4 +46,18 @@ public class SellerControllerTest
         Assert.AreEqual(StatusCodes.Status200OK, result.StatusCode);
         Assert.IsInstanceOfType(result.Value, typeof(SellerDTO));
     }
+
+     [TestMethod]
+    public void FindSellerById_BadId_ReturnsNotFound()
+    {
+        var repoWrapperMock = MockIRepositoryWrapper.GetMock();
+        var mapper = GetMapper();
+        var sellerController = new SellerController(repoWrapperMock.Object, mapper);
+
+        var id = Guid.Parse("0f8fad5b-d9cb-469f-a165-70867728950f");
+        var result = sellerController.FindSellerById(id) as ObjectResult;
+
+        Assert.IsNotNull(result);
+        Assert.AreEqual(StatusCodes.Status404NotFound, result.StatusCode);
+    }
 }

@@ -45,8 +45,9 @@ public class SellerController : ControllerBase
         try
         {
             var sellerList = _repoWrapper.SellerRepository.FindByCondition(s => s.Id == id).ToList();
+            System.Diagnostics.Debug.WriteLine("kokok" + sellerList);
 
-            if(sellerList is null) return NotFound();
+            if(sellerList is null || !sellerList.Any()) return NotFound();
             else
             {
                 var sellerResult = _mapper.Map<SellerDTO>(sellerList[0]);

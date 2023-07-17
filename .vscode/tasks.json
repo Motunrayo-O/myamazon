@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+            "command": "dotnet build /Users/motunrayoogunyinka/Documents/Training/dotnet/MyAmazon/MyAmazonTest/MyAmazonTest.csproj",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile",
+			"label": "dotnet: buildTests"
+        },
+		{ 
+            "label": ".NET Core Test with debugger", 
+            "type": "process", 
+            "isBackground": true, 
+            "command": "dotnet", 
+            "args": [ "test" ], 
+            "options": 
+                { 
+                    "cwd": "${workspaceFolder}/MyAmazonTest", 
+                    "env": 
+                    { 
+                        "VSTEST_HOST_DEBUG": "1" 
+                    }, 
+                }, 
+            "group": "test", "presentation": 
+                { 
+                    "echo": true,
+                    "reveal": "always",
+                    "focus": false,
+                    "panel": "shared"
+                },
+            "problemMatcher": [] 
+        },
+	]
+}
