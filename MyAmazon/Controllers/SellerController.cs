@@ -112,21 +112,21 @@ public class SellerController : ControllerBase
                 return BadRequest("Invalid seller");
             }
 
-            var sellerEntity = _repoWrapper.SellerRepository.FindByCondition(s => s.Id == id).ToList();
-            if(sellerEntity is null || !sellerEntity.Any())
+            var sellerEntities = _repoWrapper.SellerRepository.FindByCondition(s => s.Id == id).ToList();
+            if(sellerEntities is null || !sellerEntities.Any())
             {
                 //TODO - add logging
                 return NotFound();
             }
 
-            _mapper.Map(seller, sellerEntity);
+            _mapper.Map(seller, sellerEntities[0]);
 
-            _repoWrapper.SellerRepository.Update(sellerEntity[0]);
+            _repoWrapper.SellerRepository.Update(sellerEntities[0]);
             _repoWrapper.Save();
 
             return NoContent();
         }
-        catch (System.Exception)
+        catch (System.Exception ex)
         {
             //TODO - add logging
 

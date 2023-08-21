@@ -58,7 +58,11 @@ internal class MockISellerRepository
                   {
                       var query = q.Compile();
                       List<Seller> sellerList = new List<Seller>();
-                      sellerList.Add(sellers.First(query));
+                      var result = sellers.FirstOrDefault(query);
+                      if(result != null)
+                      {
+                        sellerList.Add(result);
+                      }
                       return sellerList.AsQueryable();
                   });
     mock.Setup(mock => mock.Create(It.IsAny<Seller>())).Callback(() => { return;});

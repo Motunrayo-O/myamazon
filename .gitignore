@@ -17,6 +17,8 @@
 mono_crash.*
 
 # Build results
+MyAmazon/bin/*
+MyAmazonTest/bin/*
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -475,3 +477,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+MyAmazon/bin/Debug/net7.0/MyAmazon.dll
+MyAmazon/bin/Debug/net7.0/MyAmazon.dll
+MyAmazon/bin/Debug/net7.0/MyAmazon.dll
